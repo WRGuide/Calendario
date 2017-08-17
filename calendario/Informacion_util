@@ -1,4 +1,4 @@
-Para ejecutar tests: 
+Para ejecutar tests:
 php phpunit.phar
 Si no está, antes ejecutar: wget https://phar.phpunit.de/phpunit-5.7.phar
 
@@ -28,3 +28,5 @@ sudo php artisan key:generate
 
 Para crear un controlador automáticamente se emplea:
 php artisan make:controller UserController --resource
+
+monypua
