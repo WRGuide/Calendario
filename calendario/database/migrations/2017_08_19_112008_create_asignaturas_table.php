@@ -17,7 +17,7 @@ class CreateAsignaturasTable extends Migration
             $table->string('email');
             $table->string('siglas');
             $table->string('descripcion');
-            $table->string('HTMLcolor',7)->nullable(false)->change();
+            $table->char('HTMLcolor',7);
             $table->primary(['email','siglas']);
             $table->foreign('email')->references('email')->on('usuarios');
             
