@@ -14,11 +14,11 @@ class CreateNivelesTable extends Migration
     public function up()
     {
         Schema::create('niveles', function (Blueprint $table) {
-            $table->string('nivel');
+            $table->string('nivel')->nullable();
             $table->integer('%color');
-            $table->primary('nivel');
-            
-            
+            $table->unique('nivel');
+
+
         });
     }
 
