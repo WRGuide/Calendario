@@ -14,15 +14,19 @@ class CreateEventosTable extends Migration
     public function up()
     {
         Schema::create('eventos', function (Blueprint $table) {
-            $table->string('email');
-            $table->string('siglas');
-            $table->string('nivel');
+            //dejamos esta como primaria directamente
+            $table->increments('id');
+            $table->string('email')->nullable();
+            $table->string('siglas')->nullable();
+            $table->string('nivel')->nullable();
             $table->date('fecha');
-            $table->primary(['email','siglas','nivel']);
-            $table->foreign('email')->references('email')->on('usuarios');
-            $table->foreign('siglas')->references('siglas')->on('asignaturas');
-            $table->foreign('nivel')->references('nivel')->on('niveles');
-            
+            //clave alternativa
+            $table->unique(['email','siglas','nivel']);
+            //para por si se borra uno, se borra el dato correspondiente
+            $table->foreign('email')->references('id')->on('usuarios')->onDelete('cascade');
+            $table->foreign('siglas')->references('id')->on('asignaturas')->onDelete('cascade');
+            $table->foreign('nivel')->references('id')->on('niveles')->onDelete('cascade');
+
         });
     }
 

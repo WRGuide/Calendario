@@ -14,13 +14,13 @@ class CreateAsignaturasTable extends Migration
     public function up()
     {
         Schema::create('asignaturas', function (Blueprint $table) {
-            $table->string('email');
-            $table->string('siglas');
+            $table->string('email')->nullable();
+            $table->string('siglas')->nullable();
             $table->string('descripcion');
             $table->char('HTMLcolor',7);
-            $table->primary(['email','siglas']);
-            $table->foreign('email')->references('email')->on('usuarios');
-            
+            $table->unique(['email','siglas']);
+            $table->foreign('email')->references('id')->on('usuarios')->onDelete('cascade');
+
         });
     }
 
