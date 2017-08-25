@@ -24,8 +24,8 @@ class CreateEventosTable extends Migration
             $table->unique(['email','siglas','nivel']);
             //para por si se borra uno, se borra el dato correspondiente
 
-            $table->foreign('siglas_id,email_id')->references('siglas,email_id')->on('asignaturas')->onDelete('cascade');
-            $table->foreign('nivel')->references('id')->on('niveles')->onDelete('cascade');
+            $table->foreign(['siglas_id','email_id'])->references(['siglas','email_id'])->on('asignaturas')->onDelete('cascade');
+            $table->foreign('nivel_id')->references('id')->on('niveles')->onDelete('cascade');
 
         });
     }
