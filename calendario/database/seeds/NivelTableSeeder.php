@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class EventosTableSeeder extends Seeder
+class NivelTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

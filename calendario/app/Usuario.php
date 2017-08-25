@@ -8,4 +8,9 @@ class Usuario extends Model
 {
     //
     protected $table = 'usuario';
+
+
+    public function asignaturas() {
+      return $this->hasMany('App\Asignatura);
+    }
 }

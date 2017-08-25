@@ -13,7 +13,7 @@ class CreateEventosTable extends Migration
      */
     public function up()
     {
-        Schema::create('eventos', function (Blueprint $table) {
+        Schema::create('evento', function (Blueprint $table) {
             //dejamos esta como primaria directamente
             $table->increments('id');
             $table->string('email_id')->nullable();
@@ -24,8 +24,8 @@ class CreateEventosTable extends Migration
             $table->unique(['email','siglas','nivel']);
             //para por si se borra uno, se borra el dato correspondiente
 
-            $table->foreign(['siglas_id','email_id'])->references(['siglas','email_id'])->on('asignaturas')->onDelete('cascade');
-            $table->foreign('nivel_id')->references('id')->on('niveles')->onDelete('cascade');
+            $table->foreign(['siglas_id','email_id'])->references(['siglas','email_id'])->on('asignatura')->onDelete('cascade');
+            $table->foreign('nivel_id')->references('id')->on('nivel')->onDelete('cascade');
 
         });
     }
@@ -37,6 +37,6 @@ class CreateEventosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('eventos');
+        Schema::dropIfExists('evento');
     }
 }

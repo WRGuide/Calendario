@@ -2,8 +2,9 @@
 
 use Illuminate\Database\Seeder;
 use App\Usuario;
+use App\Asignatura;
 
-class UsuariosTableSeeder extends Seeder
+class UsuarioTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,21 +15,21 @@ class UsuariosTableSeeder extends Seeder
     {
 
       // Borramos los datos de la tabla
-      DB::table('usuarios')->delete();
+      DB::table('usuario')->delete();
 
-      $usuario = new usuario([
+      /*$usuario = new Usuario([
           'email'=>'example@gmail.com',
           'password'=>'password'
       ]);
       //guardamos los datos
       $usuario->save();
 
-      $usuario = new usuario([
+      $usuario = new Usuario([
           'email'=>'admin@gmail.com',
           'password'=>'password'
       ]);
       //guardamos los datos
-      $usuario->save();
+      $usuario->save();*/
 
     }
 }
