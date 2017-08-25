@@ -16,15 +16,15 @@ class CreateEventosTable extends Migration
         Schema::create('eventos', function (Blueprint $table) {
             //dejamos esta como primaria directamente
             $table->increments('id');
-            $table->string('email')->nullable();
-            $table->string('siglas')->nullable();
-            $table->string('nivel')->nullable();
+            $table->string('email_id')->nullable();
+            $table->string('siglas_id')->nullable();
+            $table->string('nivel_id')->nullable();
             $table->date('fecha');
             //clave alternativa
             $table->unique(['email','siglas','nivel']);
             //para por si se borra uno, se borra el dato correspondiente
-            $table->foreign('email')->references('id')->on('usuarios')->onDelete('cascade');
-            $table->foreign('siglas')->references('id')->on('asignaturas')->onDelete('cascade');
+
+            $table->foreign('siglas_id,email_id')->references('siglas,email_id')->on('asignaturas')->onDelete('cascade');
             $table->foreign('nivel')->references('id')->on('niveles')->onDelete('cascade');
 
         });
