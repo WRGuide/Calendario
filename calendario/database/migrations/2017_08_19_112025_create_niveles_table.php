@@ -30,6 +30,6 @@ class CreateNivelesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('niveles');
+        Schema::dropIfExists('nivel');
     }
 }

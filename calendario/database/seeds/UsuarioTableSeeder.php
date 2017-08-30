@@ -31,5 +31,11 @@ class UsuarioTableSeeder extends Seeder
       //guardamos los datos
       $usuario->save();*/
 
+      DB::table('usuario')->insert([
+        'email'=>'example@gmail.com',
+        'password'=>'password'
+      ]);
+
+
     }
 }

@@ -32,6 +32,6 @@ class CreateAsignaturasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('asignaturas');
+        Schema::dropIfExists('asignatura');
     }
 }
