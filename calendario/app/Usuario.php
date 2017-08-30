@@ -11,6 +11,6 @@ class Usuario extends Model
 
 
     public function asignaturas() {
-      return $this->hasMany('App\Asignatura);
+      return $this->hasMany('App\Asignatura');
     }
 }

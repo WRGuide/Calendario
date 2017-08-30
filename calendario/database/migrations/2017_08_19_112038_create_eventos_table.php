@@ -26,6 +26,8 @@ class CreateEventosTable extends Migration
 
             $table->foreign(['siglas_id','email_id'])->references(['siglas','email_id'])->on('asignatura')->onDelete('cascade');
             $table->foreign('nivel_id')->references('id')->on('nivel')->onDelete('cascade');
+            $table->timestamps();
+
 
         });
     }

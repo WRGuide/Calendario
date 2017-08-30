@@ -18,6 +18,8 @@ class CreateNivelesTable extends Migration
             $table->string('nivel');
             $table->integer('%color');
             $table->unique('nivel');
+            $table->timestamps();
+
 
 
         });

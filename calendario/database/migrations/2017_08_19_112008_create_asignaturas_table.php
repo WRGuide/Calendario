@@ -21,6 +21,8 @@ class CreateAsignaturasTable extends Migration
             $table->char('HTMLcolor',7);
             $table->unique(['email_id','siglas']);
             $table->foreign('email_id')->references('id')->on('usuario')->onDelete('cascade');
+            $table->timestamps();
+
 
         });
     }

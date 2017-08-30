@@ -17,7 +17,7 @@ class UsuarioTableSeeder extends Seeder
       // Borramos los datos de la tabla
       DB::table('usuario')->delete();
 
-      /*$usuario = new Usuario([
+      $usuario = new Usuario([
           'email'=>'example@gmail.com',
           'password'=>'password'
       ]);
@@ -29,12 +29,17 @@ class UsuarioTableSeeder extends Seeder
           'password'=>'password'
       ]);
       //guardamos los datos
-      $usuario->save();*/
+      $usuario->save();
 
-      DB::table('usuario')->insert([
-        'email'=>'example@gmail.com',
-        'password'=>'password'
+
+      $usuario = new Usuario([
+          'email'=>'montoya@gmail.com',
+          'password'=>'password'
       ]);
+      //guardamos los datos
+      $usuario->save();
+
+
 
 
     }
