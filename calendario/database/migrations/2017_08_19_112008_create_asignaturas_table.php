@@ -15,8 +15,8 @@ class CreateAsignaturasTable extends Migration
     {
         Schema::create('asignatura', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email_id')->nullable();
-            $table->string('siglas')->nullable();
+            $table->string('email_id');
+            $table->string('siglas');
             $table->string('descripcion');
             $table->char('HTMLcolor',7);
             $table->unique(['email_id','siglas']);

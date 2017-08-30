@@ -16,9 +16,9 @@ class CreateEventosTable extends Migration
         Schema::create('evento', function (Blueprint $table) {
             //dejamos esta como primaria directamente
             $table->increments('id');
-            $table->string('email_id')->nullable();
-            $table->string('siglas_id')->nullable();
-            $table->string('nivel_id')->nullable();
+            $table->string('email_id');
+            $table->string('siglas_id');
+            $table->string('nivel_id');
             $table->date('fecha');
             //clave alternativa
             $table->unique(['email','siglas','nivel']);
